@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.pth.androidapp.ui.home.HomeFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_jobDetailFragment"
+            app:destination="@id/jobDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/wishlistFragment"
+        android:name="com.pth.androidapp.ui.wishlist.WishlishFragment"
+        android:label="fragment_wishlist"
+        tools:layout="@layout/fragment_wishlish">
+        <action
+            android:id="@+id/action_wishlistFragment_to_jobDetailFragment"
+            app:destination="@id/jobDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.pth.androidapp.ui.notification.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.pth.androidapp.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/jobDetailFragment"
+        android:name="com.pth.androidapp.ui.job_detail.JobDetailFragment"
+        android:label="fragment_job_detail"
+        tools:layout="@layout/fragment_job_detail" />
+
+    <include app:graph="@navigation/auth_nav_graph" />
+
+    <action
+        android:id="@+id/action_global_to_auth_nav_graph"
+        app:destination="@id/auth_nav_graph" />
+
+    <action
+        android:id="@+id/action_global_to_main_nav_graph"
+        app:destination="@id/main_nav_graph" />
+</navigation>
